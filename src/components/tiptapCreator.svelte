@@ -13,28 +13,33 @@
     let editor;
 
     export let defaultContent: string = ""
+    export let image_url: string = ""
+    export let title: string = ""
+    export let description: string = ""
+    export let author: string = ""
+    export let category: string = ""
+
 
     const saveChanges = async () => {
         
         console.log("CONTENT", editor.getHTML());
 
         let contentEdited = editor.getHTML();
-        $articleState.article.content = contentEdited
         console.log("STATE MODIFIED", $articleState.article);
 
         //Actualizamos en la base de datos
-        let updateArticle = await articleApi.updateArticle({
-          _id: $articleState.article._id,
-          image_url: $articleState.article.image_url,
-          title:  $articleState.article.title,
-          description:  $articleState.article.description,
-          content:  $articleState.article.content,
-          author:  $articleState.article.author,
-          category:  $articleState.article.category,
-          updatedAt: new Date()
+        let createArticle = await articleApi.submitArticle({
+          image_url: image_url,
+          title:  title,
+          description: description,
+          content:  contentEdited,
+          author: author,
+          category: category,
+          updatedAt: new Date(),
+          createdAt: new Date()
         }, $articleState.token_received)
 
-        if (updateArticle) {
+        if (createArticle) {
           alert("se editó correctamente")
           window.location.href = "http://localhost:4200/admin"
         } else {
