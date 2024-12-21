@@ -214,7 +214,7 @@
   {/if}
   <div bind:this={element} />
 
-  <button on:click={() => saveChanges()}>Guardar cambios</button>
+  <button class="save-changes" on:click={() => saveChanges()}>Guardar cambios</button>
 
 
   <style lang="scss">
@@ -241,6 +241,13 @@
           color: white;
         }
       }
+    }
+
+    .save-changes{
+        padding: 10px;
+        border: none;
+        border-radius: 10px;
+        font-size: 16px;
     }
 
   </style>

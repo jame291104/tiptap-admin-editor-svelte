@@ -76,6 +76,7 @@
 </div>
 
 <style lang="scss">
+    
 
     .input-group{
         width: 80vw;
@@ -102,6 +103,7 @@
     }
     .edit-article-container{
         width: 80vw;
+        height: 100vh;
         margin: auto;
         max-width: 1200px;
     }
