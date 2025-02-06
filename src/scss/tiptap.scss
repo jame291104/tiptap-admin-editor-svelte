@@ -1,10 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 /* Basic editor styles */
 .tiptap {
     padding: 20px;
     // border: 1px solid #5a5a5a;
     // border-radius: 10px;
-    :first-child {
-      margin-top: 0;
+    // :first-child {
+    //   margin-top: 0;
+    // }
+
+    p{
+      font-family: 'Roboto', sans-serif;
     }
   
     /* List styles */
@@ -39,20 +44,24 @@
   
     h1 { 
       font-size: 1.4rem; 
+      font-family: 'Roboto', sans-serif;
     }
   
     h2 { 
       font-size: 1.2rem; 
+      font-family: 'Roboto', sans-serif;
     }
   
     h3 { 
-      font-size: 1.1rem; 
+      font-size: 1.1rem;
+      font-family: 'Roboto', sans-serif;
     }
   
     h4, 
     h5, 
     h6 { 
       font-size: 1rem; 
+      font-family: 'Roboto', sans-serif;
     }
   
     /* Code and preformatted text styles */

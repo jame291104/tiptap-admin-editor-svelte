@@ -1,5 +1,5 @@
 <script lang="ts">
-    // import "../scss/tiptap.scss";
+    import "../scss/tiptap.scss";
   
     import { Color } from '@tiptap/extension-color'
     import ListItem from '@tiptap/extension-list-item'

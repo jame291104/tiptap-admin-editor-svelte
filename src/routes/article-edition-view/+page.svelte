@@ -40,6 +40,7 @@
     <h1>Edit Article</h1>
     
     {#if $articleState.token_received && $articleState.article_id}
+
     <div class="tiptap">
         <TiptapEditor defaultContent={$articleState.article.content}/>
     </div>

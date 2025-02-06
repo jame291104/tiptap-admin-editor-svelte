@@ -13,6 +13,11 @@
     let editor;
 
     export let defaultContent: string = ""
+    let image_url: string = ""
+    let title: string = ""
+    let description: string = ""
+    let author: string = ""
+    let category: string = ""
 
     const saveChanges = async () => {
         
@@ -25,12 +30,12 @@
         //Actualizamos en la base de datos
         let updateArticle = await articleApi.updateArticle({
           _id: $articleState.article._id,
-          image_url: $articleState.article.image_url,
-          title:  $articleState.article.title,
-          description:  $articleState.article.description,
+          image_url: image_url,
+          title:  title,
+          description:  description,
           content:  $articleState.article.content,
-          author:  $articleState.article.author,
-          category:  $articleState.article.category,
+          author:  author,
+          category:  category,
           updatedAt: new Date()
         }, $articleState.token_received)
 
@@ -43,6 +48,13 @@
     }
   
     onMount(() => {
+
+      image_url = $articleState.article.image_url
+      title = $articleState.article.title
+      description = $articleState.article.description
+      author = $articleState.article.author
+      category = $articleState.article.category
+
       editor = new Editor({
         element: element,
         extensions: [
@@ -87,6 +99,29 @@
       });
     });
   </script>
+
+  <div class="input-group">  
+      <div class="input-field">
+        <p>Imagen:</p>
+        <input type="text" placeholder="https://examplelink.com.png" bind:value={image_url}>
+      </div>
+      <div class="input-field">
+        <p>Titulo:</p>
+        <input type="text" placeholder="Ingresa un titulo" bind:value={title}>
+      </div>
+      <div class="input-field">
+        <p>Description:</p>
+        <input type="text" placeholder="Ingresa una descrip..." bind:value={description}>
+      </div>
+      <div class="input-field">
+        <p>Autor:</p>
+        <input type="text" placeholder="Pepito Pérez" bind:value={author}>
+      </div>
+      <div class="input-field">
+        <p>Categoria:</p>
+        <input type="text" placeholder="Principiante, motos, avanzados" bind:value={category}>
+      </div>
+  </div>
   
   {#if editor}
     <div class="control-group">
@@ -248,6 +283,30 @@
         border: none;
         border-radius: 10px;
         font-size: 16px;
+    }
+
+    .input-group{
+        width: 80vw;
+        max-width: 1200px;
+        padding: 20px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .input-field{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+        padding: 6px;
+        input{
+            border: 1px solid #777777;
+            border-radius: 5px;
+            height: 20px;
+            width: max-content;
+        }
     }
 
   </style>
