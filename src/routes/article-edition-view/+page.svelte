@@ -37,7 +37,7 @@
 </script>
 
 <div class="edit-article-container">  
-    <h1>Editar Articulo</h1>
+    <h2>Editar Articulo</h2>
     
     {#if $articleState.token_received && $articleState.article_id}
 
