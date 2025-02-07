@@ -43,7 +43,7 @@ export const api = {
             //console.log("RUTAS de ENTORNO EWALLET", env.PUBLIC_EWALLET_FE_URL)
             //console.log("RUTAS de ENTORNO", env.SECRET_CC_BASE_URL)
             httpClient
-                .get("http://localhost:9000/publicaciones/obtener/" + payload.article_id, { headers: { Authorization: "Bearer " + auth_token } }
+                .get("http://137.184.85.36:9000/publicaciones/obtener/" + payload.article_id, { headers: { Authorization: "Bearer " + auth_token } }
                 ).then((response) => {
                     console.log("SUCCESS - getArticleById", response.data);
                     resolve(response.data);
@@ -60,7 +60,7 @@ export const api = {
 
         return new Promise((resolve) => {
 
-            httpClient.post('http://localhost:9000/publicaciones/crear',
+            httpClient.post('http://137.184.85.36:9000/publicaciones/crear',
                 payload,
                 {
                     headers: { Authorization: "Bearer " + auth_token }
