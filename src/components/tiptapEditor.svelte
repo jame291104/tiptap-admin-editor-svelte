@@ -41,7 +41,7 @@
 
         if (updateArticle) {
           alert("se editó correctamente")
-          window.location.href = "http://localhost:4200/admin"
+          window.location.href = "http://137.184.85.36:9000/admin"
         } else {
           alert("Ocurrió un error actualizando el articulo")
         }
