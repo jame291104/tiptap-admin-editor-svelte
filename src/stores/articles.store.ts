@@ -46,7 +46,7 @@ export const api = {
                 .get("api/publicaciones/obtener/" + payload.article_id, { headers: { Authorization: "Bearer " + auth_token } }
                 ).then((response) => {
                     console.log("SUCCESS - getArticleById", response.data);
-                    resolve(response.data);
+                    resolve(response.data.data);
                 })
                 .catch((error) => {
                     console.log("ERROR - getArticleById");
@@ -67,7 +67,7 @@ export const api = {
                 }
             ).then((response) => {
                 console.log("SUCCESS - submitArticle", response)
-                resolve(response)
+                resolve(response.data)
 
             }).catch((error) => {
                 console.log('ERROR - submitArticle');
@@ -92,7 +92,7 @@ export const api = {
                 }
             ).then((response) => {
                 console.log("SUCCESS - updateArticle", response)
-                resolve(response)
+                resolve(response.data)
 
             }).catch((error) => {
                 console.log('ERROR - updateArticle');

@@ -10,7 +10,7 @@ export const GET = async ({request, params}) => {
 
     try {
 
-        let res = await httpClient.get("http://137.184.85.36:9000/publicaciones/obtener" + params.article_id,
+        let res = await httpClient.get("http://137.184.85.36:9000/publicaciones/obtener/" + params.article_id,
         {
           headers: { Authorization: request.headers.get('authorization')}
         });
