@@ -37,7 +37,7 @@
 </script>
 
 <div class="edit-article-container">  
-    <h1>Edit Article</h1>
+    <h1>Editar Articulo</h1>
     
     {#if $articleState.token_received && $articleState.article_id}
 
@@ -52,5 +52,8 @@
         width: 80vw;
         margin: auto;
         max-width: 1200px;
+        h2, h4, p{
+            font-family: 'Roboto', sans-serif;
+        }
     }
 </style>

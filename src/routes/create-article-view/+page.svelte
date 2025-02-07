@@ -106,5 +106,8 @@
         height: 100vh;
         margin: auto;
         max-width: 1200px;
+        h2, h4, p{
+            font-family: 'Roboto', sans-serif;
+        }
     }
 </style>
